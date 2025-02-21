@@ -11,6 +11,7 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 36,
         "padding_bottom": 100
@@ -71,7 +72,7 @@
         "share_EYaXNq"
       ],
       "settings": {
-        "product": "",
+        "product": "ann-demeulemeester-ss07-off-shoulder-top",
         "color_scheme": "",
         "secondary_background": false,
         "media_size": "medium",
