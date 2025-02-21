@@ -11,13 +11,84 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "featured_product_QNVVFD": {
+      "type": "featured-product",
+      "blocks": {
+        "text_HQYtcB": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_aYcFzG": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_FtkqNP": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_gD9VCR": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_P4iwMg": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_Hb8XRq": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_XYL84D": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_HQYtcB",
+        "title_aYcFzG",
+        "price_FtkqNP",
+        "variant_picker_gD9VCR",
+        "quantity_selector_P4iwMg",
+        "buy_buttons_Hb8XRq",
+        "share_XYL84D"
+      ],
+      "settings": {
+        "product": "les-six-aw23-articulated-trousers",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 100,
         "padding_bottom": 100
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "featured_product_QNVVFD"
   ]
 }
