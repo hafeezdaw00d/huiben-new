@@ -8,7 +8,7 @@
  * ------------------------------------------------------------
  */
 {
-  "parent": "collection.json",
+  "parent": "index.json",
   "context": {
     "market": "gb"
   },
