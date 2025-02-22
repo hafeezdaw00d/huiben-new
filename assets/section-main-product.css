@@ -318,6 +318,10 @@ a.product__text {
   margin-top: 3rem;
 }
 
+.product__description p {
+  margin-bottom: calc(1.4rem * 1.2);
+}
+
 .product__description-title {
   font-weight: 600;
 }
