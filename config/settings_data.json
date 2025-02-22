@@ -10,7 +10,7 @@
 {
   "current": {
     "logo": "shopify://shop_images/huiben-new-logo.png",
-    "logo_width": 90,
+    "logo_width": 50,
     "favicon": "shopify://shop_images/LS-monogram-32w.png",
     "type_header_font": "sans-serif",
     "heading_scale": 100,
@@ -20,7 +20,7 @@
     "spacing_sections": 0,
     "spacing_grid_horizontal": 16,
     "spacing_grid_vertical": 16,
-    "animations_reveal_on_scroll": false,
+    "animations_reveal_on_scroll": true,
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
     "buttons_radius": 0,
@@ -102,8 +102,8 @@
     "drawer_shadow_horizontal_offset": 0,
     "drawer_shadow_vertical_offset": 4,
     "drawer_shadow_blur": 5,
-    "badge_position": "bottom right",
-    "badge_corner_radius": 40,
+    "badge_position": "top left",
+    "badge_corner_radius": 0,
     "sale_badge_color_scheme": "accent-2",
     "sold_out_badge_color_scheme": "inverse",
     "social_facebook_link": "",
@@ -169,7 +169,7 @@
       },
       "inverse": {
         "settings": {
-          "background": "#242833",
+          "background": "#b30000",
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
