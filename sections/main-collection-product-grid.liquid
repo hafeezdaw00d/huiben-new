@@ -22,6 +22,8 @@
   <script src='{{ 'quick-order-list.js' | asset_url }}' defer='defer'></script>
 {%- endif -%}
 
+<script src='{{ 'infinite-scroll.js' | asset_url }}'></script>
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 1 | round: 0 }}px;
@@ -202,6 +204,13 @@
     {{ 'mask-arch.svg' | inline_asset_content }}
   {%- endif -%}
 </div>
+
+<script>
+  const infiniteCollection = new MeetAjaxForProduct({
+    container: '#ProductGridContainer',
+    pagination: '.meet_infinite_next',
+  });
+</script>
 
 {% schema %}
 {

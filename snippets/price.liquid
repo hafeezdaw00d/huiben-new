@@ -44,6 +44,7 @@
   class='
     helv-reset
     price
+    right
     {%- if price_class %} {{ price_class }}{% endif -%}
     {%- if available == false %} price--sold-out{% endif -%}
     {%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %} price--on-sale{% endif -%}
@@ -81,10 +82,18 @@
           {{- 'products.product.volume_pricing.price_range' | t: minimum: money_price_min, maximum: money_price_max -}}
         </span>
       {%- else -%}
-        <span class='visually-hidden visually-hidden--inline'>{{ 'products.product.price.regular_price' | t }}</span>
-        <span class='price-item price-item--regular'>
-          {{ money_price }}
-        </span>
+        {% if product.tags contains 'Inquire' %}
+          <span class='price-item price-item--regular'> Inquire </span>
+        {% elsif product.tags contains 'NFS' %}
+          <span class='price-item price-item--regular'> Not for Sale </span>
+        {% elsif product.price == 714100 %}
+          <span class='price-item price-item--regular'> On hold </span>
+        {% else %}
+          <span class='visually-hidden visually-hidden--inline'>{{ 'products.product.price.regular_price' | t }}</span>
+          <span class='price-item price-item--regular'>
+            {{ money_price }}
+          </span>
+        {%- endif -%}
       {%- endif -%}
     </div>
     <div class='price__sale'>

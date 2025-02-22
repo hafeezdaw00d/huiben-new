@@ -135,6 +135,28 @@
                     {{ form | payment_terms }}
                   {%- endform -%}
                 </div>
+                {% if product.variants.size <= 1 %}
+                  {% for variant in product.variants %}
+                    {% unless variant.title contains 'Title' %}
+                      {% assign sizes = variant.title | split: ' ' %}
+                      <p itemprop='name' class='product-single__title'>
+                        {% if sizes.first == 'x' %}
+                          No Tagged Size
+                        {% else %}
+                          Size {{ sizes.first }}
+                        {% endif %}
+                        {% if sizes.first != sizes.last %}
+                          Fits
+                          {% for size in sizes %}
+                            {% unless forloop.index == 1 %}
+                              {{ size }}
+                            {% endunless %}
+                          {% endfor %}
+                        {% endif %}
+                      </p>
+                    {% endunless %}
+                  {% endfor %}
+                {% endif %}
               {%- when 'inventory' -%}
                 <p
                   class='product__inventory{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}'
@@ -225,7 +247,7 @@
               {%- when 'quantity_selector' -%}
                 <div
                   id='Quantity-Form-{{ section.id }}'
-                  class='product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}'
+                  class='{%- if product.options.size < 2 %} hidden {% endif %}product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}'
                   {{ block.shopify_attributes }}
                 >
                   {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
@@ -457,7 +479,13 @@
                 %}
 
               {%- when 'variant_picker' -%}
-                {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+                {%- if product_variant.options > 1 %}
+                  {% render 'product-variant-picker',
+                    product: product,
+                    block: block,
+                    product_form_id: product_form_id
+                  %}
+                {% endif %}
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
