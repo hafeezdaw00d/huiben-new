@@ -766,6 +766,9 @@
         "products_to_show": {
           "label": "Maximum products to show"
         },
+        "products_per_page": {
+        "label":"Maximum products per page"
+        },
         "columns_desktop": {
           "label": "Number of columns on desktop"
         },

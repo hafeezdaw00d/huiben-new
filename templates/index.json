@@ -9,14 +9,6 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
     "featured_collection_rUhQYL": {
       "type": "featured-collection",
       "settings": {
@@ -47,7 +39,6 @@
     }
   },
   "order": [
-    "main",
     "featured_collection_rUhQYL"
   ]
 }

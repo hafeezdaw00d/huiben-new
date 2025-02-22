@@ -4,6 +4,8 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 
+<script src='{{ 'infinite-scroll.js' | asset_url }}'></script>
+
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
@@ -196,6 +198,20 @@
     {%- endif -%}
   </div>
 </div>
+<div id='loader' style='display: none; width: 100%;text-align: center;'>
+  <img
+    src='https://cdn.shopify.com/s/files/1/0668/1398/5008/files/Iphone-spinner-2.gif?v=1735809435'
+    style='margin: 0 auto;'
+    width='50px'
+    height='50px'
+  >
+</div>
+<script>
+  const infiniteCollection = new MeetAjaxForProduct({
+    container: '#product-grid',
+    pagination: '.meet_infinite_next',
+  });
+</script>
 
 {% schema %}
 {
@@ -280,7 +296,7 @@
       "type": "range",
       "id": "products_to_show",
       "min": 2,
-      "max": 25,
+      "max": 100,
       "step": 1,
       "default": 4,
       "label": "t:sections.featured-collection.settings.products_to_show.label"
