@@ -97,22 +97,17 @@
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
-                <div class='twcss-lowercase helv-reset center product__title' {{ block.shopify_attributes }}>
-                  <h1 class='helv-reset'>{{ product.title | escape }}</h1>
+                <div class='product__title' {{ block.shopify_attributes }}>
+                  <h1 class='twcss-text-[4.2rem] helv'>{{ product.title | escape }}</h1>
                   <a href='{{ product.url }}' class='product__title'>
-                    <h2 class='twcss-lowercase h1'>
+                    <h2 class='h1'>
                       {{ product.title | escape }}
                     </h2>
                   </a>
                 </div>
               {%- when 'price' -%}
                 <div id='price-{{ section.id }}' role='status' {{ block.shopify_attributes }}>
-                  {%- render 'price',
-                    product: product,
-                    use_variant: true,
-                    show_badges: true,
-                    price_class: 'helv-reset'
-                  -%}
+                  {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: '' -%}
                 </div>
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class='volume-pricing-note' id='Volume-Note-{{ section.id }}'>

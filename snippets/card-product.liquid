@@ -125,7 +125,7 @@
             </h3>
           </div>
           <div class='card__badge {{ settings.badge_position }}'>
-            {%- if card_product.available == false -%}
+            {%- if card_product.available == false and collection.title != 'Archived' -%}
               <span
                 id='NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
                 class='helv-reset badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}'
@@ -143,8 +143,8 @@
           </div>
         </div>
       </div>
-      <div class='card__content'>
-        <div class='twcss-grid twcss-grid-flow-row twcss-grid-cols-4 twcss-gap-4 card__information'>
+      <div class='card__content {% if collection.title == 'Archived' %} hidden{% endif %}'>
+        <div class='twcss-grid twcss-grid-rows-2 twcss-grid-cols-1 twcss-gap-1 card__information'>
           <h3
             class=' twcss-col-span-3 helv-reset card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}'
             {% if card_product.featured_media or settings.card_style == 'card' %}
