@@ -58,6 +58,7 @@
         },
         "collapsible-row-0": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Materials",
             "icon": "leather",
@@ -91,12 +92,6 @@
             "content": "",
             "page": ""
           }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
         }
       },
       "block_order": [
@@ -111,8 +106,7 @@
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
-        "collapsible-row-3",
-        "share"
+        "collapsible-row-3"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -126,7 +120,7 @@
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
+        "padding_top": 0,
         "padding_bottom": 12
       }
     },
