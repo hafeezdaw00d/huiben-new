@@ -302,6 +302,7 @@ html {
   overflow-y: hidden;
   white-space: nowrap;
 }
+
 .lickthestar-scroll img {
   position: relative;
   max-width: none !important;
@@ -342,7 +343,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 @media screen and (min-width: 750px) {
   .page-width {
-    padding: 0 0.8rem 0 36.8rem;
+    padding: 0 1.6rem 0 1.6rem;
   }
 
   .header.page-width,
@@ -360,7 +361,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   }
 
   .page-width-tablet {
-    padding: 0 0.8rem;
+    padding: 0 calc(var(--grid-mobile-horizontal-spacing) / 2);
   }
 }
 
@@ -2655,7 +2656,7 @@ input[type='checkbox'] {
 .header-wrapper {
   display: block;
   width: fit-content;
-  padding: 0.8rem;
+  padding: calc(var(--grid-mobile-horizontal-spacing) / 2);
   height: auto;
 }
 
