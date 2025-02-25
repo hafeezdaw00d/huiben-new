@@ -449,6 +449,8 @@
 .list-menu__item label,
 .list-menu__item input[type='checkbox'] {
   cursor: pointer;
+  font-size: 1.4rem;
+  letter-spacing: var(--hui);
 }
 
 .facet-checkbox {

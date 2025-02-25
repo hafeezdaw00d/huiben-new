@@ -98,7 +98,7 @@
                 </p>
               {%- when 'title' -%}
                 <div class='product__title' {{ block.shopify_attributes }}>
-                  <h1 class='twcss-text-[4.2rem] helv'>{{ product.title | escape }}</h1>
+                  <h1 class='twcss-text-2xl helv twcss-tracking-tighter '>{{ product.title | escape }}</h1>
                   <a href='{{ product.url }}' class='product__title'>
                     <h2 class='h1'>
                       {{ product.title | escape }}
@@ -115,7 +115,7 @@
                   </div>
                 {%- endif -%}
                 {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
-                  <div class='helv-reset twcss-lowercase product__tax caption rte'>
+                  <div class='helv twcss-text-3xl product__tax caption rte'>
                     {%- if cart.duties_included and cart.taxes_included -%}
                       {{ 'products.product.duties_and_taxes_included' | t }}
                     {%- elsif cart.taxes_included -%}

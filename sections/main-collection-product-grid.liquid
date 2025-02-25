@@ -98,16 +98,18 @@
         </form>
       </facet-filters-form>
     {%- endif -%}
-    <div class='helv-reset twcss-mb-10 twcss-flex twcss-gap-4 twcss-flex-wrap twcss-grid-rows-auto twcss-justify-between twcss-w-[100%] twcss-max-w-md twcss-mx-auto twcss-text-center'>
-      {% for link in linklists.collections.links %}
-        <li class='{% if link.active %}active{% endif %} collections-list'>
-          <a href='{{ link.url }}'>
-            {{ link.title }}
-          </a>
-        </li>
-      {%- endfor %}
-    </div>
-    <div class='{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}'>
+    {% comment %}
+      <div class='helv-reset twcss-mb-10 twcss-flex twcss-gap-4 twcss-flex-wrap twcss-grid-rows-auto twcss-justify-between twcss-w-[100%] twcss-mx-auto twcss-text-center'>
+        {% for link in linklists['new-menu'].links %}
+          <li class='{% if link.active %}active{% endif %} collections-list'>
+            <a href='{{ link.url }}'>
+              {{ link.title }}
+            </a>
+          </li>
+        {%- endfor %}
+      </div>
+    {% endcomment %}
+    <div class='{% if section.settings.filter_type == 'vertical' %} facets-vertical relative{% endif %}'>
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
       <script src='{{ 'facets.js' | asset_url }}' defer='defer'></script>
       {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}

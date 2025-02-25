@@ -82,13 +82,13 @@
               disabled
             {% endif %}
           >
-            <span class=' twcss-leading-none helv-reset twcss-invert'>
+            <span class='twcss-leading-none helv twcss-text-button twcss-capitalize text twcss-font-white'>
               {%- if product.selected_or_first_available_variant == null -%}
-                {{ 'products.product.unavailable' | t }}
+                {{ 'products.product.unavailable' | t }}.
               {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                {{ 'products.product.sold_out' | t }}
+                {{ 'products.product.sold_out' | t }}.
               {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
+                {{ 'products.product.add_to_cart' | t }}!
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}

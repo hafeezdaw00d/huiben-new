@@ -17,9 +17,21 @@ module.exports = {
       x2lg: '1920px',
       pageMaxWidth: '1440px',
     },
+    fontSize: {
+      sm: '1.4rem',
+      md: '2.4rem',
+      lg: '3.2rem',
+      xl: '4.4rem',
+      '2xl': '5.4rem',
+    },
     extend: {
       fontFamily: {
         heading: 'var(--font-heading-family)',
+        'theme-f1': ['"Sohne"', 'sans-serif'],
+        'theme-f2': ['"Theinhardt"', 'sans-serif'],
+      },
+      fontSize: {
+        button: '3.3rem',
       },
     },
   },
